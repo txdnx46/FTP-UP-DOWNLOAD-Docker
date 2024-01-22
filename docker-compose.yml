@@ -1,0 +1,50 @@
+version: '3'
+services:
+  ftp:
+    image: stilliard/pure-ftpd:hardened
+    ports:
+      - 21:21
+      - 30000-30009:30000-30009
+    volumes:
+      - "./data:/home/ftp"
+      - "./passwd:/etc/pure-ftpd/passwd"
+    environment:
+      - FTP_USER_NAME=big
+      - FTP_USER_PASS=12345
+      - FTP_USER_HOME=/home/ftp
+    command: "/run.sh -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P localhost -s -A -j -Z -H -4 -E -R -X -x -p 30000:30009 -c 5 -C 5"
+
+  mysql_db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 9001:80
+    environment:
+      - PMA_ARBITRARY=1
+
+  web_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80 # แมปพอร์ต 8080 ของเครื่อง host ไปยังพอร์ต 80 ของ container
+    volumes:
+      - "./app:/var/www/html"
+    depends_on:
+      - ftp
+      - mysql_db
+    environment:
+      - FTP_SERVER=ftp
+      - FTP_USER=big
+      - FTP_PASS=12345
+      - MYSQL_HOST=mysql_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=file_db
+  

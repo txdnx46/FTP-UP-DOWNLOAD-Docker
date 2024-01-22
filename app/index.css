@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    font-family: 'Itim', cursive;
+
+}
+
+body {
+    background-image: url('./img/bg2.png');
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffffff;
+    background-size: cover;
+}
+
+
+label {
+    border: none;
+    height: 50px;
+    width: 100px;
+    margin: 30px 0;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 15px;
+    transition: .5s;
+    cursor: pointer;
+    
+    color: #fafafa;
+
+}
+
+header {
+
+    padding: 5px;
+    background-size: cover;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+
+    color: #ffffff;
+}
+
+
+
+ul {
+    list-style: none;
+    position: absolute;
+    float: right;
+    left: 50%;
+    margin: 30px 10px;
+    padding: 0 20px;
+    width: 40%;
+    background-color: #1abc9c4f;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #1abc9c00;
+    font-size: 15px;
+    color: #000000;
+
+}
+
+article {
+    background-color: #1abc9c4f;
+    margin: 10px 0;
+    padding: 0 30px;
+    margin-top: 30px;
+    margin-left: 80px;
+    width: 80vh;
+
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #fafafa00;
+
+}
+
+input {
+    border: none;
+    height: 25px;
+    width: 100px;
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 15px;
+    transition: .5s;
+    cursor: pointer;
+    background: #1abc9c;
+    color: #ffffff;
+}
+
+.int-ch {
+    border: none;
+    height: 20px;
+    width: 95%;
+    margin: 10px 0;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 15px;
+    transition: .5s;
+    cursor: pointer;
+    background: #1abc9c;
+    color: #fafafa;
+}
+
+p {
+    display: none;
+}

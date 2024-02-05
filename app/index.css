@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Varela+Round&display=swap');
 * {
-    font-family: 'Itim', cursive;
-
+    font-family: 'Anton', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 body {
     background-image: url('./img/bg2.png');
+    background-size:cover;
     margin: 0px;
     padding: 0px;
     background-color: #ffffff;
-    background-size: cover;
+    
 }
 
 
@@ -26,55 +29,66 @@ label {
     transition: .5s;
     cursor: pointer;
     
-    color: #fafafa;
 
 }
 
 header {
-
-    padding: 5px;
-    background-size: cover;
+    color: white;
+    padding: 0 15px;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+
+}
+h1{
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: solid 2px;
+    animation: 
+    typing 4s ,
+    cursor .4s step-end infinite alternate;
 }
 
-h2 {
-
-    color: #ffffff;
+@keyframes cursor {
+    50% {border-color:transparent;}
 }
 
+@keyframes typing {
+    from { width:0 }
+}
 
 
 ul {
+
     list-style: none;
     position: absolute;
     float: right;
-    left: 50%;
-    margin: 30px 10px;
+    left: 52%;
+    margin: 0 10px;
     padding: 0 20px;
     width: 40%;
-    background-color: #1abc9c4f;
+    background-color: #ffffff;
     border-style: solid;
     border-radius: 15px;
     border-color: #1abc9c00;
+    box-shadow: 2px 2px 5px gray;
     font-size: 15px;
     color: #000000;
 
 }
 
 article {
-    background-color: #1abc9c4f;
+
+    background-color: #ffffff;
     margin: 10px 0;
     padding: 0 30px;
     margin-top: 30px;
     margin-left: 80px;
     width: 80vh;
-
     font-size: 20px;
     border-style: solid;
     border-radius: 15px;
     border-color: #fafafa00;
-
+    box-shadow: 2px 2px 5px gray;
 }
 
 input {
@@ -88,7 +102,7 @@ input {
     border-radius: 15px;
     transition: .5s;
     cursor: pointer;
-    background: #1abc9c;
+    background: #451abc;
     color: #ffffff;
 }
 
@@ -103,10 +117,17 @@ input {
     border-radius: 15px;
     transition: .5s;
     cursor: pointer;
-    background: #1abc9c;
-    color: #fafafa;
+    background: #1abc9c00;
+    color: #000000;
+   
 }
+
 
 p {
     display: none;
+}
+.img-one{
+    position: relative;
+    left: 13vh;
+
 }

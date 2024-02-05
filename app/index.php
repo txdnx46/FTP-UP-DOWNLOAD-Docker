@@ -4,9 +4,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
 <head>
-    <title>Page Title</title>
+    <title>WEB UPLOAD Ftp-Server</title>
 </head>
-
+<link rel="icon" href=
+"https://cdn-icons-png.flaticon.com/512/3616/3616929.png"
+          type="image/x-icon">
 <body>
     <?php
 
@@ -32,7 +34,6 @@
             echo "<li>";
             echo $file;
             echo " <form action='download.php' method='get' style='display:inline;'><input type='hidden' name='file' value='$file'><input type='submit' value='Download'></form>";
-            echo " <form action='edit.php' method='get' style='display:inline;'><input type='hidden' name='file' value='$file'><input type='submit' value='Edit'></form>";
             echo " <form action='delete.php' method='post' style='display:inline;' onsubmit='return confirm(\"Are you sure you want to delete $file?\")'><input type='hidden' name='file' value='$file'><input type='submit' value='Delete'></form>";
             echo "</li>";
         }
@@ -64,7 +65,6 @@
                     <span class='sp-text' id='display_$filename'>$filename</span> <tr>
                     <a href='download.php?file=" . urlencode($filename) . "'>Download File</a> <tr>
                     <a href='delete.php?file=" . urlencode($filename) . "'>Delete File</a> <tr>
-                    <a href='#' onclick='editFileName(\"$filename\")'>Edit Name</a> <tr>
                   </li>";
             }
             echo "</ul>";
@@ -80,20 +80,7 @@
     // ปิดการเชื่อมต่อ FTP
     ftp_close($ftp_conn);
     ?>
-
+    <img class="img-one" src='./img/4-removebg-preview.png'>
 </body>
 
 </html>
-
-
-
-
-<script>
-    function editFileName(filename) {
-        var newName = prompt("Enter new name for " + filename + ":");
-        if (newName !== null && newName !== "") {
-            // Send the new name to edit.php
-            window.location.href = "edit.php?file=" + encodeURIComponent(filename) + "&newName=" + encodeURIComponent(newName);
-        }
-    }
-</script>
